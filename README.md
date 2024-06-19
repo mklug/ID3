@@ -1,5 +1,5 @@
 # ID3
 
-Implementation of the ID3 decision tree algorithm following the [Quinlan](https://link.springer.com/article/10.1007/BF00116251).
+Implementation of the ID3 decision tree algorithm following the [Quinlan](https://link.springer.com/article/10.1007/BF00116251).  We add some hyperparameters to control the splitting of leaves without a certain threshold of data with a certain threshold of variance in the response variable when limited to that data as well as a hyperparameter to control the maximum depth of the learned tree.  The independent and dependent variables must already be encoded as numbers representing the classes when using the ``fit`` method (all variables must be categorical).  Note that the attribute selection routine in the [wiki article](https://en.wikipedia.org/wiki/ID3_algorithm) is a bit different than that outlined by Quinlan (for the wiki version, see that commented out ``_find_split_leaf_attribute`` in ``ID3.py``).  
 
-The file ``ID3.py`` contins the implementation and the file ``test.ipynb`` contains a test on the example data from figure 2 of [Quinlan's paper](https://link.springer.com/article/10.1007/BF00116251).  
+The file ``ID3.py`` contains the implementation and the file ``test.ipynb`` contains a test on the example data from figure 2 of [Quinlan's paper](https://link.springer.com/article/10.1007/BF00116251).  
