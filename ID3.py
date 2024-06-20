@@ -255,23 +255,11 @@ class ID3:
                                                                     self.root),
                             axis=1)
 
-    def _idxmax(nums):
-        '''
-        Determine the first index in nums that contains
-        the maximum value.
-        '''
-        m = float("-inf")
-        best = 0
-        for i, x in enumerate(nums):
-            if x > m:
-                best = i
-                m = x
-        return best
-
     def predict(self, X_test):
         '''
         Return DataFrame of predictions with the same index 
         as ``X_test``.
         '''
-        return ID3.predict_proba(self, X_test).apply(ID3._idxmax,
+
+        return ID3.predict_proba(self, X_test).apply(lambda x: x.idxmax(),
                                                      axis=1)
